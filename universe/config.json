@@ -114,7 +114,7 @@
           "title": "Disk size (MB)",
           "description": "sql pod persistent disk requirements (in MB)",
           "type": "integer",
-          "default": 25
+          "default": 2048
         },
         "disk_type": {
           "title": "Disk type [ROOT, MOUNT]",
