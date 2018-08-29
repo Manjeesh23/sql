@@ -19,8 +19,8 @@ pods:
       node:
         goal: RUNNING
         cmd:
-        cpus: {{NODE_CPUS}}
-        memory: {{NODE_MEM}}
+        cpus: 0.5
+        memory: 500
         volume:
           path: "sql-container-path"
           type: "ROOT"
