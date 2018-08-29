@@ -24,7 +24,7 @@ pods:
         memory: {{NODE_MEM}}
         volume:
           path: "sql-container-path"
-          type: {{NODE_DISK_TYPE}}
-          size: {{NODE_DISK}}
+          type: "ROOT"
+          size: 2048
         env:
           SLEEP_DURATION: {{SLEEP_DURATION}}
