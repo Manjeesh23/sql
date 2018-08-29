@@ -15,7 +15,8 @@ pods:
     tasks:
       node:
         goal: RUNNING
-        cmd: "echo sql >> sql-container-path/output && sleep $SLEEP_DURATION"
+        cmd: >
+          ./bootstrap
         cpus: {{NODE_CPUS}}
         memory: {{NODE_MEM}}
         volume:
