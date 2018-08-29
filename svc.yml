@@ -11,17 +11,15 @@ pods:
       {{VIRTUAL_NETWORK_NAME}}:
         labels: {{VIRTUAL_NETWORK_PLUGIN_LABELS}}
     {{/ENABLE_VIRTUAL_NETWORK}}
-    image: {{SQLCLUSTER_IMAGE}}
     tasks:
       node:
         goal: RUNNING
-        cmd: >
-          ./bootstrap
+        cmd: "echo sql >> sql-container-path/output && sleep $SLEEP_DURATION"
         cpus: {{NODE_CPUS}}
         memory: {{NODE_MEM}}
         volume:
           path: "sql-container-path"
-          type: ROOT
+          type: {{NODE_DISK_TYPE}}
           size: {{NODE_DISK}}
         env:
           SLEEP_DURATION: {{SLEEP_DURATION}}
