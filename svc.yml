@@ -22,6 +22,6 @@ pods:
         volume:
           path: "sql-container-path"
           type: ROOT
-          size: 2000
+          size: 100
         env:
           SLEEP_DURATION: {{SLEEP_DURATION}}
