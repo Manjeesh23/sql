@@ -18,8 +18,7 @@ pods:
     tasks:
       node:
         goal: RUNNING
-        cmd: >
-          ./bootstrap
+        cmd:
         cpus: {{NODE_CPUS}}
         memory: {{NODE_MEM}}
         volume:
