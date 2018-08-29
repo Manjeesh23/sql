@@ -1,4 +1,3 @@
-
 name: {{FRAMEWORK_NAME}}
 scheduler:
   principal: {{FRAMEWORK_PRINCIPAL}}
@@ -13,17 +12,16 @@ pods:
         labels: {{VIRTUAL_NETWORK_PLUGIN_LABELS}}
     {{/ENABLE_VIRTUAL_NETWORK}}
     image: {{SQLCLUSTER_IMAGE}}
-    uris:
-      - {{BOOTSTRAP_URI}}
     tasks:
       node:
         goal: RUNNING
-        cmd:
-        cpus: 0.5
-        memory: 500
+        cmd: >
+          ./bootstrap
+        cpus: {{NODE_CPUS}}
+        memory: {{NODE_MEM}}
         volume:
           path: "sql-container-path"
-          type: "ROOT"
-          size: 100
+          type: ROOT
+          size: 2048
         env:
           SLEEP_DURATION: {{SLEEP_DURATION}}
